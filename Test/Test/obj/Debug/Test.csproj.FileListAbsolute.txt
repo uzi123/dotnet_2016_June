@@ -1,1 +1,2 @@
 C:\Users\Elad\Documents\GitHub\dotnet_2016_June\Test\Test\bin\Debug\Test.exe.config
+C:\Users\Elad\Source\Repos\dotnet_2016_June\Test\Test\bin\Debug\Test.exe.config
