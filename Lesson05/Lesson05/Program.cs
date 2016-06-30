@@ -59,6 +59,8 @@ namespace Lesson05
     {
         static void Main(string[] args)
         {
+            Collection coll = new Collection();
+            coll.Add(93);
 
             Car c = new Car();
 
