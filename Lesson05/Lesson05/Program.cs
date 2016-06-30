@@ -6,12 +6,22 @@ using System.Threading.Tasks;
 
 namespace Lesson05
 {
+
+    class DivisionResult
+    {
+        public int quotient;
+        public int remainder;
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            int result = product(7, 3);
-            Console.WriteLine(result);
+            DivisionResult result = division(7, 3);
+            Console.WriteLine("3 fits in 7 " + result.quotient
+                +" times, with a remainder of " +
+                result.remainder);
+            
         }
 
         static int distance(int x, int y)
@@ -62,6 +72,33 @@ namespace Lesson05
             if (y == 0)
                 return -1;
             return distance(x, product(quotient(x, y), y));
+        }
+
+        static DivisionResult division(int x, int y)
+        {
+            if (y == 0)
+            {
+                /*
+                DivisionResult error = new DivisionResult();
+                error.quotient = -1;
+                return error;
+                */
+                return null;
+            }
+            int result = 0;
+            int sum = y;
+            int temp = 0;
+            while (sum <= x)
+            {
+                result++;
+                sum += y;
+                temp += y;
+            }
+            DivisionResult divisionResult = new DivisionResult();
+            divisionResult.quotient = result;
+            divisionResult.remainder = distance(x, temp);
+
+            return divisionResult;
         }
     }
 }
