@@ -7,6 +7,48 @@ using System.Threading.Tasks;
 namespace Lesson05
 {
 
+
+    class Collection
+    {
+        int[] arr;
+        int pos;
+        public Collection()
+        {
+            arr = new int[10];
+            pos = 0;
+
+        }
+
+        //adds an element to the collection
+        //this function always succeeds
+        public void Add(int x)
+        {
+
+        }
+
+        //returns an element at the position index
+        public int Get(int index)
+        {
+            return 0;
+        }
+
+        //removes an element from the collection in the position index
+        public void Remove(int index)
+        {
+
+        }
+    }
+
+    class Car
+    {
+        public Car()
+        {
+            Console.WriteLine("in constructor");
+        }
+
+    }
+
+
     class DivisionResult
     {
         public int quotient;
@@ -17,10 +59,19 @@ namespace Lesson05
     {
         static void Main(string[] args)
         {
+
+            Car c = new Car();
+
             DivisionResult result = division(7, 3);
-            Console.WriteLine("3 fits in 7 " + result.quotient
-                +" times, with a remainder of " +
-                result.remainder);
+            if (result != null)
+            {
+                Console.WriteLine("3 fits in 7 " + result.quotient
+                    + " times, with a remainder of " +
+                    result.remainder);
+            }else
+            {
+                Console.WriteLine("error occured");
+            }
             
         }
 
