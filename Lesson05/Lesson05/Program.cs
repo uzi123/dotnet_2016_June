@@ -10,6 +10,7 @@ namespace Lesson05
     {
         static void Main(string[] args)
         {
+            //test
         }
     }
 }
