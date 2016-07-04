@@ -39,11 +39,52 @@ namespace Lesson06
 
         public int Get(int index)
         {
-
-            return 0;
+            if(index >= pos || index < 0)
+            {
+                throw new Exception("index out of bounds");
+            }
+            return nums[index];
+        }
+        //a e y z a m m
+        public void Remove(int index)
+        {
+            if (index >= pos || index < 0)
+            {
+                throw new Exception("index out of bounds");
+            }
+            for (int i = index; i < pos; i++)
+            {
+                nums[i] = nums[i + 1];
+            }
+            pos--;
         }
 
-        public void Remove(int index)
+        public int Size()
+        {
+            return pos;
+        }
+
+        public int[] ToArray()
+        {
+            
+        }
+
+        public int IndexOf(int number)
+        {
+            //returns the position/index of the element
+            //in the array.
+            //Returns, the first occurence of "number"
+            //in the collection.
+            //returns -1 if "number" doesn't exist.
+        }
+
+        //a c b j q e d 
+        public void Insert(int number, int index)
+        {
+
+        }
+
+        public void Set(int number, int index)
         {
 
         }
