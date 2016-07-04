@@ -55,8 +55,15 @@ namespace Lesson06
         static void Main(string[] args)
         {
             //Collection myCollection = new Collection(100);
-            int q = Quotient(7, 0);
-            Console.WriteLine("q="+q);
+            try
+            {
+                int q = Quotient(7, 0);
+                Console.WriteLine("q=" + q);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("boom! " + ex.Message);
+            }
             Console.WriteLine("done");
         }
 
