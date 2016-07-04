@@ -17,6 +17,12 @@ namespace Lesson06
             pos = 0;
         }
 
+        public Collection(int size)
+        {
+            nums = new int[size];
+            pos = 0;
+        }
+
         public void Add(int number)
         {
             if(pos == nums.Length)//no room!
@@ -48,6 +54,26 @@ namespace Lesson06
     {
         static void Main(string[] args)
         {
+            //Collection myCollection = new Collection(100);
+            int q = Quotient(7, 0);
+            Console.WriteLine("q="+q);
+            Console.WriteLine("done");
+        }
+
+        static int Quotient(int x, int y)
+        {
+            if (y == 0)
+            {
+                throw new Exception("division by zero");
+            }
+            int sum = y;
+            int result = 0;
+            while (sum <= x)
+            {
+                result++;
+                sum += y;
+            }
+            return result;
         }
     }
 }
