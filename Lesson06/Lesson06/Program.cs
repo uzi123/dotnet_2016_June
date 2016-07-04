@@ -25,7 +25,13 @@ namespace Lesson06
 
         public void Add(int number)
         {
-            if(pos == nums.Length)//no room!
+            MakeRoom();
+            nums[pos++] = number;
+        }
+
+        void MakeRoom()
+        {
+            if (pos == nums.Length)//no room!
             {
                 int[] temp = new int[nums.Length * 2];
                 for (int i = 0; i < nums.Length; i++)
@@ -34,7 +40,6 @@ namespace Lesson06
                 }
                 nums = temp;
             }
-            nums[pos++] = number;
         }
 
         public int Get(int index)
@@ -66,7 +71,12 @@ namespace Lesson06
 
         public int[] ToArray()
         {
-            
+            int[] temp = new int[pos];
+            for (int i = 0; i < pos; i++)
+            {
+                temp[i] = nums[i];
+            }
+            return temp;
         }
 
         public int IndexOf(int number)
@@ -76,12 +86,30 @@ namespace Lesson06
             //Returns, the first occurence of "number"
             //in the collection.
             //returns -1 if "number" doesn't exist.
+            for (int i = 0; i < pos; i++)
+            {
+                if (nums[i] == number)
+                    return i;
+            }
+            return -1;
         }
 
-        //a c b j q e d 
+        
+
+        //a b c d 0
         public void Insert(int number, int index)
         {
-
+            if (index >= pos || index < 0)
+            {
+                throw new Exception("index out of bounds");
+            }
+            MakeRoom();
+            for (int i = pos; i > index; i--)
+            {
+                nums[i] = nums[i - 1];
+            }
+            nums[index] = number;
+            pos++;
         }
 
         public void Set(int number, int index)
