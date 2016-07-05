@@ -116,6 +116,11 @@ namespace Lesson06
         {
 
         }
+
+        public bool Equals(Collection other)
+        {
+            return true;
+        }
     }
 
 
