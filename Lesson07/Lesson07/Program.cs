@@ -21,9 +21,9 @@ namespace Lesson07
 
         public void Add(int number)
         {
-            Link last = null ;
-
-
+            Link last = anchor ;
+            while (last.next != null)
+                last = last.next;
             last.next = new Link(number);
         }
 
@@ -32,7 +32,17 @@ namespace Lesson07
 
         public int Get(int index)
         {
-            return 0;
+            int counter = -1;
+            Link link = anchor;
+            while(link.next != null && counter < index)
+            {
+                link = link.next;
+                counter++;
+            }
+            if (counter == index)
+                return link.value;
+            else
+                throw new Exception("index out of bounds!");
         }
         //a e y z a m m
         public void Remove(int index)
@@ -92,8 +102,37 @@ namespace Lesson07
 
     class Program
     {
+
+        class A
+        {
+            public int x;
+            public B b;
+        }
+
+        class B
+        {
+            public int x;
+            public A a;
+        }
+
         static void Main(string[] args)
         {
+            /*
+            A a = new A();
+            a.x = 3;
+            B b = new B();
+            b.x = 8;
+            a.b = new B();
+            b.a = a;
+            a.b.x = 19;
+            Console.WriteLine(b.x);
+            */
+            Collection col = new Collection();
+            col.Add(2);
+            col.Add(22);
+            col.Add(234);
+
+            Console.WriteLine(col.Get(3));
         }
     }
 }
