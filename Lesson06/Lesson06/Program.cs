@@ -10,6 +10,7 @@ namespace Lesson06
     {
         int[] nums;
         int pos;
+        
 
         public Collection()
         {
@@ -28,6 +29,8 @@ namespace Lesson06
             MakeRoom();
             nums[pos++] = number;
         }
+
+        
 
         void MakeRoom()
         {
@@ -119,6 +122,17 @@ namespace Lesson06
 
         public bool Equals(Collection other)
         {
+            if (other == null)
+                return false;
+            if (this == other)
+                return true;
+            if (this.pos != other.pos)
+                return false;
+            for (int i = 0; i < this.pos; i++)
+            {
+                if (this.nums[i] != other.nums[i])
+                    return false;
+            }
             return true;
         }
     }
@@ -128,6 +142,7 @@ namespace Lesson06
     {
         static void Main(string[] args)
         {
+            /*
             //Collection myCollection = new Collection(100);
             try
             {
@@ -139,6 +154,17 @@ namespace Lesson06
                 Console.WriteLine("boom! " + ex.Message);
             }
             Console.WriteLine("done");
+            */
+
+            Collection col1 = new Collection();
+            Collection col2 = new Collection();
+
+            col1.Add(3);
+            col1.Add(1);
+            col1.Add(19);
+            col1.Add(80);
+            Console.WriteLine(col1.Equals(col1));
+
         }
 
         static int Quotient(int x, int y)
