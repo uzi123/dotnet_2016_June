@@ -9,18 +9,22 @@ namespace Lesson07
 
     class Collection
     {
+
+        Link anchor;
+        
+
         public Collection()
         {
-
+            anchor = new Link(0);
         }
-
-        public Collection(int size)
-        {
-        }
+        
 
         public void Add(int number)
         {
+            Link last = null ;
 
+
+            last.next = new Link(number);
         }
 
 
@@ -70,6 +74,18 @@ namespace Lesson07
         {
             
             return true;
+        }
+
+        class Link
+        {
+            public int value;
+            public Link next;
+
+            public Link(int value)
+            {
+                this.value = value;
+                this.next = null;
+            }
         }
     }
 
