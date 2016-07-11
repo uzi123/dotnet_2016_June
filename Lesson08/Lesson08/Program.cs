@@ -12,4 +12,31 @@ namespace Lesson08
         {
         }
     }
+
+    class BinaryTree
+    {
+        Vertex anchor;
+
+        public BinaryTree()
+        {
+            anchor = new Vertex(0);
+        }
+
+        public int getMax()
+        {
+
+        }
+
+        class Vertex
+        {
+            public int value;
+            public Vertex left;
+            public Vertex right;
+
+            public Vertex(int value)
+            {
+                this.value = value;
+            }
+        }
+    }
 }
