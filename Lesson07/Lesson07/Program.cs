@@ -131,8 +131,54 @@ namespace Lesson07
 
         public bool Equals(Collection other)
         {
+            if (other == null)
+                return false;
+            if (other == this)
+                return true;
+            if (this.count != other.count)
+                return false;
+            Link link1 = this.anchor;
+            Link link2 = other.anchor;
             
+            /*
+            while(link1.next != null && link2.next != null)
+            {
+                link1 = link1.next;
+                link2 = link2.next;
+                if (link1.value != link2.value)
+                    return false;
+            }
+            return link1.next == link2.next;
+            */
+            /*
+            for (int i = 0; i < count; i++)
+            {
+                link1 = link1.next;
+                link2 = link2.next;
+                if (link1.value != link2.value)
+                    return false;
+            }
             return true;
+            */
+            /*
+            Link link1 = this.anchor;
+            Link link2 = other.anchor;
+            bool b = true;
+            while(link1.next != null && link2.next != null
+                && b)
+            {
+                link1 = link1.next;
+                link2 = link2.next;
+                b = link1.value == link2.value;
+            }
+            if (b) {
+                b = link1.next == null && link2.next == null;
+            }
+            return b;
+            */
+
+
+
         }
 
         class Link
@@ -182,6 +228,15 @@ namespace Lesson07
             col.Add(234);
 
             Console.WriteLine(col.Get(3));
+
+            int x = 0;
+            int y = 0;
+            bool f1, f2;
+            while((f1 = x < 10) || (f2 = y < 20))
+            {
+                
+            }
+
         }
     }
 }
