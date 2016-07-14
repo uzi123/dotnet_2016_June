@@ -10,6 +10,7 @@ namespace Lesson09
     {
         static void Main(string[] args)
         {
+            /*
             Node node1 = new Node(1);
             Node node2 = new Node(2);
             Node node3 = new Node(3);
@@ -22,7 +23,47 @@ namespace Lesson09
             node3.right = node5;
 
             Console.WriteLine(node1.GetSum());
+            */
+            DrawRectangle(5, 3, 30, 10);
+            DrawRectangle(2, 7, 30, 10);
+            //DrawX(26);
+        }
+
+        public static void DrawRectangle(int x, int y, int width, int height)
+        {
+            for (int i = 0; i < y; i++)
+            {
+                Console.WriteLine();
+            }
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 0; j < width; j++)
+                {
+                    bool isFrame = i == 0 || i == height - 1 || j == 0 || j == width - 1;
+                    Console.Write(isFrame ? "*" : " ");
+                }
+                Console.WriteLine();
+            }
             
+        }
+
+        public static void DrawX(int size)
+        {
+            if (size % 2 == 0)
+                size--;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    bool isDiagonal = i == j || i + j == size - 1;
+                    Console.Write(isDiagonal ? "*" : " ");
+                }
+                Console.WriteLine();
+            }
         }
     }
 
