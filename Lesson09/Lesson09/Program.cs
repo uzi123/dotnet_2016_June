@@ -24,8 +24,8 @@ namespace Lesson09
 
             Console.WriteLine(node1.GetSum());
             */
-            DrawRectangle(5, 3, 30, 10);
-            DrawRectangle(2, 7, 30, 10);
+            //DrawRectangle(5, 3, 30, 10);
+            DrawRectangle2(2, 7, 30, 10);
             //DrawX(26);
         }
 
@@ -49,6 +49,47 @@ namespace Lesson09
                 Console.WriteLine();
             }
             
+        }
+
+
+        public static void DrawRectangle2(int x, int y, int width, int height)
+        {
+            for (int i = 0; i < y; i++)
+            {
+                Console.WriteLine();
+            }
+            for (int i = 0; i < x; i++)
+            {
+                Console.Write(" ");
+            }
+            for (int i = 0; i < width; i++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < height - 2; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write("*");
+                for (int j = 0; j < width - 2; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write("*");
+                Console.WriteLine();
+            }
+            for (int i = 0; i < x; i++)
+            {
+                Console.Write(" ");
+            }
+            for (int i = 0; i < width; i++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
         }
 
         public static void DrawX(int size)
